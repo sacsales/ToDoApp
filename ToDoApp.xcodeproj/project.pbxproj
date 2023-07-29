@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC6A210A2A7551030079BC1B /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A21092A7551030079BC1B /* AddTodoView.swift */; };
 		ECE5CEBA2A7249840018C91C /* ToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE5CEB92A7249840018C91C /* ToDoAppApp.swift */; };
 		ECE5CEBC2A7249840018C91C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE5CEBB2A7249840018C91C /* ContentView.swift */; };
 		ECE5CEBE2A7249860018C91C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE5CEBD2A7249860018C91C /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC6A21092A7551030079BC1B /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		ECE5CEB62A7249840018C91C /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE5CEB92A7249840018C91C /* ToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppApp.swift; sourceTree = "<group>"; };
 		ECE5CEBB2A7249840018C91C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				ECE5CEB92A7249840018C91C /* ToDoAppApp.swift */,
 				ECE5CEBB2A7249840018C91C /* ContentView.swift */,
+				EC6A21092A7551030079BC1B /* AddTodoView.swift */,
 				ECE5CEC92A7261030018C91C /* TodoDetailView.swift */,
 				ECE5CEC72A724A270018C91C /* Todo.swift */,
 				ECE5CEBD2A7249860018C91C /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 				ECE5CEC82A724A270018C91C /* Todo.swift in Sources */,
 				ECE5CEBA2A7249840018C91C /* ToDoAppApp.swift in Sources */,
 				ECE5CECA2A7261030018C91C /* TodoDetailView.swift in Sources */,
+				EC6A210A2A7551030079BC1B /* AddTodoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,11 +16,12 @@ struct ContentView: View {
         Todo(title: "research mics"),
     ]
     
+    @State private var showSheet = false
     
     var body: some View {
         
         NavigationStack {
-            List($todos, id: \.id) { $todo in
+            List($todos, editActions: [.all]) { $todo in
                 NavigationLink {
                     TodoDetailView(todo: $todo)
                 } label: {
@@ -47,7 +48,24 @@ struct ContentView: View {
                 }
                
             }
-            .navigationTitle("Todo")
+            
+            .navigationTitle("Todos")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showSheet = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $showSheet) {
+                AddTodoView(sourceArray: $todos)
+                    .presentationDetents([.medium])
+            }
         }
     }
         
