@@ -17,15 +17,22 @@ struct AddTodoView: View {
     @Binding var sourceArray: [Todo]
     @Environment(\.dismiss) var goAway
     
+    
+
+    
     func save() {
+        
         let todo = Todo(title: title, subtitle: subtitle)
         sourceArray.append(todo)
         goAway()
     }
+    
     var body: some View {
         Form {
             TextField("Title", text: $title)
             TextField("Subtitle", text: $subtitle)
+
+            
             Section {
                 Button("Save") {
                     if title.isEmpty {
@@ -33,6 +40,8 @@ struct AddTodoView: View {
                     } else {
                         save()
                     }
+                    
+                    
                 }
                 
                 Button("Cancel", role: .destructive) {

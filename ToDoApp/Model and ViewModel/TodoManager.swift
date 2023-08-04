@@ -3,10 +3,11 @@
 //  ToDoApp
 //
 //  Created by Sabrina C. Sales on 31/07/2023.
-//
+// source of truth. 
 
 import Foundation
 import SwiftUI
+
 
 class TodoManager: ObservableObject {
     @Published var todos: [Todo] = [] {
@@ -15,6 +16,36 @@ class TodoManager: ObservableObject {
         }
     }
     
+    
+    @Published var searchTerm = ""
+    
+    var todosFiltered: Binding<[Todo]> {
+            Binding (
+                get: {
+                    if self.searchTerm == "" { return self.todos }
+                    return self.todos.filter {
+                        $0.title.lowercased().contains(self.searchTerm.lowercased())
+                    }
+                },
+                set: {
+                    self.todos = $0
+                }
+            )
+        }
+    
+   //this took me a while to figure out. i am unashamedly proud of the alphabetical sorting seen below >:]
+    
+    var todosSorted: Binding<[Todo]> {
+        Binding(
+            get: {
+                return self.todos.sorted { $0.title.lowercased() < $1.title.lowercased() }
+            }, set: {
+                self.todos = $0
+            }
+        
+        )
+    }
+
     var numTodosDone: Int {
         todos.filter { $0.isCompleted}.count
     }

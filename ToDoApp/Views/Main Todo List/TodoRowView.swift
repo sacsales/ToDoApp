@@ -16,29 +16,35 @@ struct TodoRowView: View {
     var body: some View {
         
         if !todo.isCompleted {
-        NavigationLink {
-            TodoDetailView(todo: $todo)
-        } label: {
-            VStack {
-                
+            NavigationLink {
+                TodoDetailView(todo: $todo)
+            } label: {
+                VStack {
+                    
                     HStack {
                         Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
-                            
+                        
                             .onTapGesture {
                                 withAnimation {
-                                    
                                     todo.isCompleted.toggle()
                                 }
                             }
                         VStack(alignment: .leading) {
                             Text(todo.title)
                                 .strikethrough(todo.isCompleted)
-                            if !todo.subtitle.isEmpty {
-                                Text(todo.subtitle)
-                                    .foregroundColor(.gray)
-                                    .font(.footnote)
-                                    .strikethrough(todo.isCompleted)
-                            }
+                            
+                                if !todo.subtitle.isEmpty {
+                                    Text(todo.subtitle)
+                                        .foregroundColor(.gray)
+                                        .font(.footnote)
+                                        .strikethrough(todo.isCompleted)
+                                }
+                                
+                               
+                                
+                            
+                            
+                            
                         }
                         
                     }
@@ -53,6 +59,6 @@ struct TodoRowView: View {
 
 struct TodoRowView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoRowView(todo: .constant(Todo(title: "DemoTodo")))
+        TodoRowView(todo: .constant(Todo(title: "DemoTodo", subtitle: "yahoo")))
     }
 }
