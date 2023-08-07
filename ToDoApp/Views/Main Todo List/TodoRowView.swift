@@ -15,8 +15,7 @@ struct TodoRowView: View {
     
     var body: some View {
         
-        if !todo.isCompleted {
-            NavigationLink {
+                    NavigationLink {
                 TodoDetailView(todo: $todo)
             } label: {
                 VStack {
@@ -45,7 +44,7 @@ struct TodoRowView: View {
                             
                             
                             
-                        }
+                        
                         
                     }
                     
@@ -59,6 +58,6 @@ struct TodoRowView: View {
 
 struct TodoRowView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoRowView(todo: .constant(Todo(title: "DemoTodo", subtitle: "yahoo")))
+        TodoRowView(todo: .constant(Todo(title: "DemoTodo", subtitle: "a subtitle!")))
     }
 }

@@ -21,6 +21,7 @@ struct TodoDetailView: View {
         .navigationTitle("Todo Detail")
         
     }
+        
 }
 
 struct TodoDetailView_Previews: PreviewProvider {

@@ -10,7 +10,6 @@ import Foundation
 
 extension Todo {
     
-    
     static let sampleTodos = [
                 Todo(title: "feed mittens"),
                 Todo(title: "pick up bananas"),

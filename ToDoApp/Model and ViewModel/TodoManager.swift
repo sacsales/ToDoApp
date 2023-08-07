@@ -10,6 +10,7 @@ import SwiftUI
 
 
 class TodoManager: ObservableObject {
+    
     @Published var todos: [Todo] = [] {
         didSet {
             save()
@@ -33,7 +34,7 @@ class TodoManager: ObservableObject {
             )
         }
     
-   //this took me a while to figure out. i am unashamedly proud of the alphabetical sorting seen below >:]
+   
     
     var todosSorted: Binding<[Todo]> {
         Binding(

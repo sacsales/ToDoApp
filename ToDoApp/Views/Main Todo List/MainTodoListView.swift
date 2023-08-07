@@ -18,7 +18,7 @@ struct MainTodoListView: View {
     var body: some View {
         NavigationStack {
             
-            List(todoManager.todosSorted, editActions: [.all]) { $todo in
+            List(todoManager.searchTerm.isEmpty ? todoManager.todosSorted : todoManager.todosFiltered, editActions: [.all]) { $todo in
                 TodoRowView(todo: $todo)
             }
             .searchable(text: $todoManager.searchTerm)
